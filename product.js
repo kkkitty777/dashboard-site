@@ -18,10 +18,18 @@ function initDashboard() {
 
 /* ── 1. TOTAL FUNDING ─────────────────────────── */
 function renderTotalFunding() {
-  const el = document.getElementById('total-amount');
-  const funding = 32499999;   // demo value, cents avoided
-  el.textContent = `$${numberWithCommas(funding.toFixed(2))}`;
+  const sheetURL = 'https://opensheet.elk.sh/2PACX-1vQEgjrqgRyjEakYi9IbAjv_RKdjkknaBmaacjgAuhONftAM740yJptl1_JLbJd8zxk_x6vy-18CP0IT
+/Sheet1';
+  fetch(sheetURL)
+    .then(res => res.json())
+    .then(data => {
+      const fundingEntry = data.find(row => row.metric === "total_funding");
+      const funding = parseFloat(fundingEntry?.value || 0);
+      document.getElementById('total-amount').textContent =
+        `$${numberWithCommas(funding.toFixed(2))}`;
+    });
 }
+
 
 /* ── 2. COUNTRY CONTRIBUTION (DONUT) ─────────── */
 function renderCountryContribution() {
