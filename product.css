@@ -1,0 +1,166 @@
+/* Google Fonts setup:
+   Add this to your <head> in HTML:
+   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+*/
+
+:root {
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --accent: #6366f1;
+  --text: #111827;
+  --subtext: #6b7280;
+  --radius: 12px;
+  --shadow: 0 4px 10px rgba(0,0,0,.06);
+  --gap: 1.25rem;
+  --transition: all .25s ease;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+               sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: var(--gap);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--gap);
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+
+.card h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .75rem;
+  color: var(--subtext);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.total-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: .25rem .5rem;
+  border-radius: 50px;
+  background: var(--accent);
+  color: #fff;
+  font-size: .75rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  font-size: .875rem;
+  padding: .5rem 0;
+}
+
+.table th {
+  color: var(--subtext);
+  font-weight: 600;
+}
+
+.table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.progress-bar {
+  width: 100%;
+  height: .5rem;
+  border-radius: 4px;
+  background: #e5e7eb;
+  overflow: hidden;
+  position: relative;
+  margin-top: .5rem;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px 0 0 4px;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 240px;
+}
+
+.donut-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.doc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.doc-list li {
+  font-size: .875rem;
+  color: var(--accent);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.doc-list li:hover {
+  text-decoration: underline;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .875rem;
+  padding: .5rem 0;
+}
+
+.status-pill {
+  font-size: .75rem;
+  padding: .15rem .5rem;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.status-active   { background: #10b981; }
+.status-pending  { background: #f59e0b; }
+.status-complete { background: #6b7280; }
