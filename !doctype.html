@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Foundation Dashboard</title>
+  <link rel="stylesheet" href="product.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <main class="dashboard">
+    <!-- Total Funding -->
+    <section class="card">
+      <h2>Total Funding</h2>
+      <div class="total-amount" id="total-amount">$0.00</div>
+      <span class="badge">Updated just now</span>
+    </section>
+
+    <!-- Country Contribution -->
+    <section class="card">
+      <h2>Country Contribution</h2>
+      <div class="donut-container">
+        <canvas id="country-chart"></canvas>
+      </div>
+    </section>
+
+    <!-- Asset-Type Breakdown -->
+    <section class="card">
+      <h2>Asset-Type Breakdown</h2>
+      <div id="asset-types"></div>
+    </section>
+
+    <!-- Financial Visualization -->
+    <section class="card">
+      <h2>Financial Visualization</h2>
+      <div class="chart-container">
+        <canvas id="finance-chart"></canvas>
+      </div>
+    </section>
+
+    <!-- Top Contributors -->
+    <section class="card">
+      <h2>Top Contributors</h2>
+      <table class="table" id="contributors">
+        <thead><tr><th>Name</th><th>Amount</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Project Funding KPIs -->
+    <section class="card">
+      <h2>Project Funding KPIs</h2>
+      <div id="kpi-metrics"></div>
+    </section>
+
+    <!-- Evidence Documents -->
+    <section class="card">
+      <h2>Evidence Documents</h2>
+      <ul class="doc-list" id="doc-list"></ul>
+    </section>
+
+    <!-- Project List -->
+    <section class="card">
+      <h2>Project List</h2>
+      <div id="project-list"></div>
+    </section>
+  </main>
+
+  <script src="product.js"></script>
+</body>
+</html>
